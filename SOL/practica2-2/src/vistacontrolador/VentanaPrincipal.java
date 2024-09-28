@@ -4,15 +4,15 @@
  */
 package vistacontrolador;
 
+
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Dam2
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
-
-    /**
-     * Creates new form VentanaPrincipal
-     */
+    
     public VentanaPrincipal() {
         initComponents();
     }
@@ -29,9 +29,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         Saludar_boton = new javax.swing.JButton();
         Texto_Usuario = new javax.swing.JLabel();
         Campo_Nombre = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        Imagen_Saludo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Saluda");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setLocation(new java.awt.Point(0, 0));
+        setLocationByPlatform(true);
+        setResizable(false);
 
         Saludar_boton.setText("Saluda");
         Saludar_boton.addActionListener(new java.awt.event.ActionListener() {
@@ -48,7 +53,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistacontrolador/saluda.png"))); // NOI18N
+        Imagen_Saludo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Paul\\Documents\\GitHub\\pr-ctica-2-2-ventana-jframe-saludo-inicial-PaulCarvajal\\SOL\\practica2-2\\src\\vistacontrolador\\saluda.png")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -58,23 +63,24 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(113, 113, 113)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Texto_Usuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Campo_Nombre)))
+                        .addComponent(Texto_Usuario))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(158, 158, 158)
-                        .addComponent(Saludar_boton))
+                        .addGap(169, 169, 169)
+                        .addComponent(Imagen_Saludo))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(168, 168, 168)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(129, Short.MAX_VALUE))
+                        .addGap(87, 87, 87)
+                        .addComponent(Campo_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(150, 150, 150)
+                        .addComponent(Saludar_boton)))
+                .addContainerGap(110, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(49, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addContainerGap(43, Short.MAX_VALUE)
+                .addComponent(Imagen_Saludo)
+                .addGap(38, 38, 38)
                 .addComponent(Texto_Usuario)
                 .addGap(18, 18, 18)
                 .addComponent(Campo_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -87,9 +93,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Saludar_botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Saludar_botonActionPerformed
+        
+       JOptionPane.showMessageDialog(null, "¡Hola "  + Campo_Nombre.getText() + "!");
+       
+       
 
     }//GEN-LAST:event_Saludar_botonActionPerformed
-
     private void Campo_NombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Campo_NombreActionPerformed
      }//GEN-LAST:event_Campo_NombreActionPerformed
 
@@ -130,8 +139,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Campo_Nombre;
+    private javax.swing.JLabel Imagen_Saludo;
     private javax.swing.JButton Saludar_boton;
     private javax.swing.JLabel Texto_Usuario;
-    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
