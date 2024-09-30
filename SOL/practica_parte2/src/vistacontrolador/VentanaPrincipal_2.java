@@ -40,7 +40,7 @@ public class VentanaPrincipal_2 extends javax.swing.JFrame {
         setName("aaaaaaaa"); // NOI18N
         setResizable(false);
 
-        Imagen_Saludo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistacontrolador/saluda.png"))); // NOI18N
+        Imagen_Saludo.setIcon(new javax.swing.ImageIcon("C:\\Users\\DAM2_03\\Documents\\GitHub\\pr-ctica-2-2-ventana-jframe-saludo-inicial-PaulCarvajal\\SOL\\practica_parte2\\src\\vistacontrolador\\saluda.png")); // NOI18N
 
         Campo_Apellido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
