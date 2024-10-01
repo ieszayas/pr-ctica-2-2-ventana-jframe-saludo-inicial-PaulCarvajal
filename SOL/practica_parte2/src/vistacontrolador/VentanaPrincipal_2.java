@@ -36,6 +36,7 @@ public class VentanaPrincipal_2 extends javax.swing.JFrame {
         Boton_Saludar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Saluda");
         setLocationByPlatform(true);
         setName("aaaaaaaa"); // NOI18N
         setResizable(false);
@@ -114,30 +115,33 @@ public class VentanaPrincipal_2 extends javax.swing.JFrame {
         //ninguno de los dos campos debe estar vacio
         if (Campo_Nombre.getText().isEmpty() || Campo_Apellido.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "ERROR" + "\n" + "Ningun campo puede estar vacio");
+            resetear();
             return;
         }
         //La longitud del nombre debe ser minimo 5
         if (Campo_Nombre.getText().length() < 5) {
             JOptionPane.showMessageDialog(null, "ERROR" + "\n" + "El Nombre debe tener mas de 5 caracteres");
+            resetear();
             return;
         }
         //ninguno de los campos debe tener un simbolo numerico
         if (!Campo_Nombre.getText().matches("^[a-zA-Z]+$") || !Campo_Apellido.getText().matches("^[a-zA-Z]+$")) {
             JOptionPane.showMessageDialog(null, "ERROR" + "\n" + "No puedes introducir ningun simbolo numerico");
+            resetear();
             return;
         }
 
         JOptionPane.showMessageDialog(null, "¡Hola " + Campo_Nombre.getText() + " " + Campo_Apellido.getText() + "!");
-        Campo_Nombre.setText("");
-        Campo_Apellido.setText("");
-
-
+        resetear();
+        
+        
 
     }//GEN-LAST:event_Boton_SaludarActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
+    
+    public  void resetear(){
+        Campo_Nombre.setText("");
+        Campo_Apellido.setText("");
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
